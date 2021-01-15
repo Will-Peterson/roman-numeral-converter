@@ -42,25 +42,25 @@ export default function Form() {
     <div className={classes.root}> 
         <div>      
             <FormControl fullWidth className={classes.margin} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-amount">Number</InputLabel>
-            <OutlinedInput
-            id="outlined-adornment-amount"
-            value={values.number}
-            onChange={handleNumberToRomanNumeral('amount')}
-            startAdornment={<InputAdornment position="start"></InputAdornment>}
-            labelWidth={60}
-            />
+                <InputLabel htmlFor="outlined-adornment-amount">Number</InputLabel>
+                <OutlinedInput
+                    id="outlined-adornment-amount"
+                    value={values.number}
+                    onChange={handleNumberToRomanNumeral('amount')}
+                    startAdornment={<InputAdornment position="start"></InputAdornment>}
+                    labelWidth={60}
+                />
             </FormControl>
         
             <FormControl fullWidth className={classes.margin} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-amount">Roman Numeral</InputLabel>
-            <OutlinedInput
-            id="outlined-adornment-amount"
-            value={values.romanNumberal}
-            onChange={handleRomanNumeralToNumber('amount')}
-            startAdornment={<InputAdornment position="start"></InputAdornment>}
-            labelWidth={60}
-            />
+                <InputLabel htmlFor="outlined-adornment-amount">Roman Numeral</InputLabel>
+                <OutlinedInput
+                    id="outlined-adornment-amount"
+                    value={values.romanNumberal}
+                    onChange={handleRomanNumeralToNumber('amount')}
+                    startAdornment={<InputAdornment position="start"></InputAdornment>}
+                    labelWidth={60}
+                />
             </FormControl>
         </div>
     </div>
