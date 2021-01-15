@@ -19,7 +19,7 @@ export default function Converter(num) {
 
     for (let key in romanToNum) {
         while (num >= romanToNum[key]) {
-            roman += key;
+            romanNumeral += key;
             num -= romanToNum[key];
         }
     }
