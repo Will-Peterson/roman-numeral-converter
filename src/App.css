@@ -3,22 +3,6 @@ body {
   color: rgb(41, 37, 37);
 }
 
-.outer-container {
-  background-color: aquamarine;
+.MuiInputBase-input {
   text-align: center;
-  /* margin: 0 auto; */
-
 }
-
-.title {
-  /* text-align: center; */
-  font-size: 2rem;
-  padding: 20px;
-  background-color: cadetblue;
-}
-
-.form-container {
-  text-align: center;
-  background-color: cornsilk;
-}
-
