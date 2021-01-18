@@ -6,18 +6,17 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(() => ({
   containerStyle: {
     backgroundColor: "honeydew",
-    borderRadius: "1rem",
+    borderRadius: "1rem"
   },
   inputStyle: {
-    fontSize: "3rem",
-    maxLength: "10"
+    fontSize: "3rem"
   }
 }));
 
 const App = () => {
   const [values, setValues] = useState({
     number: "",
-    romanNumeral: "",
+    romanNumeral: ""
   });
   
   const classes = useStyles();
@@ -41,8 +40,8 @@ const App = () => {
       I\u033FX\u033F: 9000000,
       V\u033F:        5000000,
       I\u033FV\u033F: 4000000,
-      M\u0305:        1000000, //   \u0305 one line
-      C\u0305M\u0305: 900000,       //   \u033F two lines
+      M\u0305:        1000000,
+      C\u0305M\u0305: 900000,
       D\u0305:        500000,
       C\u0305D\u0305: 400000,
       C\u0305:        100000,
@@ -65,7 +64,7 @@ const App = () => {
       IX:             9,
       V:              5,
       IV:             4,
-      I:               1,
+      I:              1,
     };
     
     let romanNumeral = "";
@@ -79,62 +78,55 @@ const App = () => {
     return romanNumeral;
   };
   
-  const inputProps ={
+  const inputProps = {
     max: 3999999999,
+    min: 1
   }
-  
   
   return (
     <Grid
-    container
-    direction="column"
-    justify="center"
-    style={{ minHeight: "100vh" }}
-    align="center"
+      container
+      direction="column"
+      justify="center"
+      style={{ minHeight: "60vh" }}
+      align="center"
     >
-      <Grid item xs={12} />
-      <Container style={{minWidth: "1200px"}} className={classes.containerStyle}>
-        <Typography variant='h2'>Number to Roman Numeral Converter</Typography>
-        <FormControl>
-          <Box m={5}>
-            <Input
-              className={classes.inputStyle}
-              fullWidth
-              type="number"
-              value={values.number}
-              name="number"
-              onChange={handleChange}
-              placeholder="25"
-              autoFocus
-              inputProps={inputProps}
-              style={{width:'350px'}}
-              />
-          </Box>
-          <Box m={5}>
-            <Input
-              style={{width:'1050px'}}
-              className={classes.inputStyle}
-              value={converter(values.number)}
-              placeholder="XXL"
-              disabled
-              />
-          </Box>
-        </FormControl>
-      </Container>
+    <Grid item xs={12} />
+    <Container style={{minWidth: "1200px"}} className={classes.containerStyle}>
+      <Typography variant='h2'>Number to Roman Numeral Converter</Typography>
+      <FormControl>
+        <Box m={5}>
+          <Input
+            className={classes.inputStyle}
+            fullWidth
+            type="number"
+            value={values.number}
+            name="number"
+            onChange={handleChange}
+            placeholder="25"
+            autoFocus
+            style={{width:'350px'}}
+            inputProps={inputProps}
+            onInput={(e)=>{ 
+              e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,10)
+            }}
+          />
+          {/* <Typography variant='subtitle'>Enter a number between 1 and 3,999,999,999</Typography> */}
+          <div style={{fontSize: '0.875rem'}}>Enter a number between 1 and 3,999,999,999</div>
+        </Box>
+        <Box m={5}>
+          <Input
+            style={{width:'1050px'}}
+            className={classes.inputStyle}
+            value={converter(values.number)}
+            placeholder="XXL"
+            disabled
+          />
+        </Box>
+      </FormControl>
+    </Container>
     </Grid>
   );
 };
 
 export default App;
-
-/*
-  TODO
-  => tell user what to do / how many characters / which characters to use
-  => put limit on input box
-  => user input validation
-
-  COMPLETED
-  => add increase/decrease arrow
-  => add extra numbers up to million
-  => center inputs
-*/
