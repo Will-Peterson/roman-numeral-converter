@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import { Container, Grid, Input, FormControl, Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -92,7 +91,7 @@ const App = () => {
       align="center"
     >
     <Grid item xs={12} />
-    <Container style={{minWidth: "1200px"}} className={classes.containerStyle}>
+    <Container style={{minWidth: "75rem"}} className={classes.containerStyle}>
       <Typography variant='h2'>Number to Roman Numeral Converter</Typography>
       <FormControl>
         <Box m={5}>
@@ -105,7 +104,7 @@ const App = () => {
             onChange={handleChange}
             placeholder="25"
             autoFocus
-            style={{width:'350px'}}
+            style={{width:'21.875rem'}}
             inputProps={inputProps}
             onInput={(e)=>{ 
               e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,10)
@@ -116,7 +115,7 @@ const App = () => {
         </Box>
         <Box m={5}>
           <Input
-            style={{width:'1050px'}}
+            style={{width:'65.625rem'}}
             className={classes.inputStyle}
             value={converter(values.number)}
             placeholder="XXL"

@@ -1,6 +1,6 @@
 {
-  "short_name": "Number Converter React App",
-  "name": "Number to Roman Numeral Converter",
+  "short_name": "Roman Numeral Converter App",
+  "name": "Roman Numeral Converter App",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
