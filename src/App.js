@@ -110,7 +110,6 @@ const App = () => {
               e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,10)
             }}
           />
-          {/* <Typography variant='subtitle'>Enter a number between 1 and 3,999,999,999</Typography> */}
           <div style={{fontSize: '0.875rem'}}>Enter a number between 1 and 3,999,999,999</div>
         </Box>
         <Box m={5}>
